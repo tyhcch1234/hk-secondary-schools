@@ -307,7 +307,7 @@ footer .note{color:var(--ink3)}
       <li><b>區域</b>：按教育局 18 區分區（學校實際所在區域）。</li>
       <li><b>學校類別</b>：官立／資助／直資／按位津貼，另附學生性別及宗教背景。</li>
       <li><b>主題</b>：按 16 類主題以關鍵詞多標籤自動歸類（每校平均 2.6 個），點主題標籤可即時篩選；分類為整理結果，非官方分類。</li>
-      <li><b>報告摘要</b>：由各校官網可讀取的《學校周年報告》PDF 抽取（近三年），列出關注事項及其「成效／成就」段落；只作摘錄，未逐校人工改寫，數字與結論以原文為準。約 3 成學校在網上公開可讀報告，其餘未收錄。</li>
+      <li><b>報告摘要</b>：由各校官網可讀取的《學校周年報告》PDF 抽取（近三年），列出關注事項及其「成效／成就」段落；中文摘要由 AI 依報告原文改寫，只使用原文內容、不加入外部資料，可展開核對原文摘錄及 PDF。數字與結論以原文為準；約 3 成學校在網上公開可讀報告，其餘未收錄。</li>
       <li><b>關注項目</b>：摘自概覽「學校特色 → 學校關注事項」一欄，由學校自行提供及核實，已按原文整理為條目；部分學校只列年度主題或未填報，該等情況會標示「概覽未列明」。</li>
     </ul>
     <h3>範圍與限制</h3>
@@ -358,7 +358,7 @@ function rpPanel(rp){
     const sumTxt = y.s ? `<p class="rpS">${esc(y.s)}</p>` : '';
     const quote = y.q ? `<details class="rpD"><summary>原文佐證 ▾</summary><p class="rpO">「${esc(y.q)}」</p></details>` : '';
     const detail = blocks ? `<details class="rpD"><summary>原文摘錄 ▾</summary>${blocks}</details>` : '';
-    return `<div class="rpY"><div class="rpYh"><span class="rpTag">${esc(y.y)}</span>${y.en ? '<span class="rpTag" style="background:#f3f4f6;color:#5a616e">英文原文</span>${y.m ? '<span class="rpTag" style="background:#ecfdf3;color:#0f766e">人工查證</span>' : ''}' : ''}
+    return `<div class="rpY"><div class="rpYh"><span class="rpTag">${esc(y.y)}</span>${y.en ? '<span class=\"rpTag\" style=\"background:#f3f4f6;color:#5a616e\">英文原文</span>' : ''}${y.m ? '<span class=\"rpTag\" style=\"background:#ecfdf3;color:#0f766e\">人工查證</span>' : ''}
       <a class="rpSrc" href="${y.u}" target="_blank" rel="noopener">報告原文 PDF</a></div>${sumTxt}${quote}${detail}</div>`;
   }).join('') + '</div>';
 }
