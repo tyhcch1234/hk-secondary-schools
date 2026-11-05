@@ -1,0 +1,68 @@
+[
+ {
+  "id": "142",
+  "name": "基督書院",
+  "web": "http://christcollege.edu.hk",
+  "type": "資助"
+ },
+ {
+  "id": "192",
+  "name": "梁文燕紀念中學（沙田）",
+  "web": "http://mail.hlmssst.edu.hk",
+  "type": "官立"
+ },
+ {
+  "id": "375",
+  "name": "香港浸會大學附屬學校王錦輝中小學",
+  "web": "http://hkbuas.edu.hk",
+  "type": "直資"
+ },
+ {
+  "id": "390",
+  "name": "香港中國婦女會馮堯敬紀念中學",
+  "web": "http://fyk.edu.hk",
+  "type": "資助"
+ },
+ {
+  "id": "307",
+  "name": "聖母無玷聖心書院",
+  "web": "http://ihmc.edu.hk",
+  "type": "資助"
+ },
+ {
+  "id": "258",
+  "name": "賽馬會體藝中學",
+  "web": "http://tic.edu.hk",
+  "type": "資助"
+ },
+ {
+  "id": "265",
+  "name": "沙田蘇浙公學",
+  "web": "http://kccshatin.edu.hk",
+  "type": "資助"
+ },
+ {
+  "id": "185",
+  "name": "樂善堂楊葛小琳中學",
+  "web": "http://lstyoungkhl.edu.hk",
+  "type": "資助"
+ },
+ {
+  "id": "208",
+  "name": "馬鞍山聖若瑟中學",
+  "web": "http://eservices.hkedcity.net",
+  "type": "資助"
+ },
+ {
+  "id": "356",
+  "name": "五育中學",
+  "web": "http://nyss.edu.hk",
+  "type": "資助"
+ },
+ {
+  "id": "20",
+  "name": "保良局朱敬文中學",
+  "web": "http://plkcwc.edu.hk",
+  "type": "資助"
+ }
+]

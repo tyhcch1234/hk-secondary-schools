@@ -11,6 +11,10 @@ try:
     summ = json.load(open('data/reports/summaries.json'))
 except Exception:
     summ = {}
+try:
+    manual = json.load(open('data/reports/manual_merged.json'))
+except Exception:
+    manual = {}
 
 ORDER = ['中西區','灣仔區','香港東區','香港南區','離島區','油尖旺區','深水埗區','九龍城區',
          '黃大仙區','觀塘區','荃灣區','屯門區','元朗區','北區','沙田區','大埔區','西貢區','葵青區']
@@ -63,10 +67,12 @@ for r in rows:
         'g': r['gender'], 'rel': r['religion'], 'w': r['webpage'], 's': r['source'],
         'i': f['items'], 'th': f.get('theme',''), 'note': fnote, 'id': r['id'],
         'tg': school_tags(f['items']),
-        'rp': [{'y': y['y'], 'u': y['u'], 'en': bool(y.get('en')),
-                's': next((x['s'] for x in summ.get(r['id'], []) if x['y'] == y['y']), ''),
-                'b': [{'t': b['title'], 'c': b['content'], 'o': b['outcome']} for b in y['b'][:3]]}
-               for y in rep.get(r['id'], [])]
+        'rp': ([{'y': y['y'], 'u': y['u'], 'en': bool(y.get('en')),
+                 's': next((x['s'] for x in summ.get(r['id'], []) if x['y'] == y['y']), ''),
+                 'b': [{'t': b['title'], 'c': b['content'], 'o': b['outcome']} for b in y['b'][:3]]}
+                for y in rep.get(r['id'], [])]
+               + [{'y': m['y'], 'u': m['u'], 'en': False, 's': m['s'], 'q': m.get('q',''), 'm': True, 'b': []}
+                  for m in manual.get(r['id'], []) if not any(y['y'] == m['y'] for y in rep.get(r['id'], []))])
     })
 data.sort(key=lambda x: (dorder.get(x['d'], 99), x['n']))
 
@@ -350,9 +356,10 @@ function rpPanel(rp){
       return `<div class="rpB"><div class="rpT">${esc(b.t)}</div>${o}${c}</div>`;
     }).join('');
     const sumTxt = y.s ? `<p class="rpS">${esc(y.s)}</p>` : '';
+    const quote = y.q ? `<details class="rpD"><summary>原文佐證 ▾</summary><p class="rpO">「${esc(y.q)}」</p></details>` : '';
     const detail = blocks ? `<details class="rpD"><summary>原文摘錄 ▾</summary>${blocks}</details>` : '';
-    return `<div class="rpY"><div class="rpYh"><span class="rpTag">${esc(y.y)}</span>${y.en ? '<span class="rpTag" style="background:#f3f4f6;color:#5a616e">英文原文</span>' : ''}
-      <a class="rpSrc" href="${y.u}" target="_blank" rel="noopener">報告原文 PDF</a></div>${sumTxt}${detail}</div>`;
+    return `<div class="rpY"><div class="rpYh"><span class="rpTag">${esc(y.y)}</span>${y.en ? '<span class="rpTag" style="background:#f3f4f6;color:#5a616e">英文原文</span>${y.m ? '<span class="rpTag" style="background:#ecfdf3;color:#0f766e">人工查證</span>' : ''}' : ''}
+      <a class="rpSrc" href="${y.u}" target="_blank" rel="noopener">報告原文 PDF</a></div>${sumTxt}${quote}${detail}</div>`;
   }).join('') + '</div>';
 }
 

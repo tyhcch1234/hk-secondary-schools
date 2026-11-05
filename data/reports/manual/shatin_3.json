@@ -1,0 +1,56 @@
+[
+ {
+  "id": "32",
+  "name": "博愛醫院陳楷紀念中學",
+  "web": "http://gmail.com",
+  "type": "資助"
+ },
+ {
+  "id": "236",
+  "name": "培僑書院",
+  "web": "http://puikiu.edu.hk",
+  "type": "直資"
+ },
+ {
+  "id": "296",
+  "name": "聖公會曾肇添中學",
+  "web": "http://skhtst.edu.hk",
+  "type": "資助"
+ },
+ {
+  "id": "382",
+  "name": "香港神託會培基書院",
+  "web": "http://spkc.edu.hk",
+  "type": "直資"
+ },
+ {
+  "id": "51",
+  "name": "德信中學",
+  "web": "http://tsss.edu.hk",
+  "type": "直資"
+ },
+ {
+  "id": "62",
+  "name": "東華三院馮黃鳳亭中學",
+  "web": "http://mail.twghfwfts.edu.hk",
+  "type": "資助"
+ },
+ {
+  "id": "64",
+  "name": "東華三院黃鳳翎中學",
+  "web": "http://twghwflc.edu.hk",
+  "type": "資助"
+ },
+ {
+  "id": "73",
+  "name": "東華三院邱金元中學",
+  "web": "http://tungwah.org.hk",
+  "type": "資助"
+ },
+ {
+  "id": "252",
+  "name": "仁濟醫院董之英紀念中學",
+  "web": "http://ychtcy.edu.hk",
+  "type": "資助"
+ }
+]

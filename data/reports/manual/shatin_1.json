@@ -1,0 +1,68 @@
+[
+ {
+  "id": "225",
+  "name": "明愛馬鞍山中學",
+  "web": "http://cmos.edu.hk",
+  "type": "資助"
+ },
+ {
+  "id": "352",
+  "name": "五旬節林漢光中學",
+  "web": "http://lamhonkwong.edu.hk",
+  "type": "資助"
+ },
+ {
+  "id": "263",
+  "name": "沙田官立中學",
+  "web": "http://stgss.edu.hk",
+  "type": "官立"
+ },
+ {
+  "id": "264",
+  "name": "沙田培英中學",
+  "web": "http://pyc.edu.hk",
+  "type": "資助"
+ },
+ {
+  "id": "336",
+  "name": "天主教郭得勝中學",
+  "web": "http://ktscss.edu.hk",
+  "type": "資助"
+ },
+ {
+  "id": "207",
+  "name": "馬鞍山崇真中學",
+  "web": "http://mosttss.edu.hk",
+  "type": "資助"
+ },
+ {
+  "id": "161",
+  "name": "浸信會呂明才中學",
+  "web": "http://blmcss.edu.hk",
+  "type": "資助"
+ },
+ {
+  "id": "99",
+  "name": "佛教覺光法師中學",
+  "web": "http://gmail.com",
+  "type": "資助"
+ },
+ {
+  "id": "96",
+  "name": "佛教黃允畋中學",
+  "web": "http://bwwtc.edu.hk",
+  "type": "資助"
+ },
+ {
+  "id": "240",
+  "name": "青年會書院",
+  "web": "http://cymcac.edu.hk",
+  "type": "資助"
+ },
+ {
+  "id": "40",
+  "name": "潮州會館中學",
+  "web": "http://ccass.edu.hk",
+  "type": "資助"
+ }
+]

@@ -1,0 +1,123 @@
+{
+ "225": {
+  "home_ok": true,
+  "pdfs": [
+   "http://cmos.edu.hk/sites/default/files/download/%E3%80%8C%E4%B8%AD%E4%B8%80%E8%87%AA%E8%A1%8C%E5%88%86%E9%85%8D%E5%AD%B8%E4%BD%8D%E3%80%8D%E7%94%B3%E8%AB%8B%E8%A1%A8_2027.pdf"
+  ],
+  "pages": [
+   "http://cmos.edu.hk/core/modules/system/css/components/system-status-report-counters.css?tms48f",
+   "https://sites.google.com/cmos.edu.hk/lifeplanning/",
+   "http://cmos.edu.hk/core/modules/system/css/components/system-status-report-general-info.css?tms48f"
+  ]
+ },
+ "352": {
+  "err": "ERR:<urlopen error timed out>",
+  "pdfs": []
+ },
+ "263": {
+  "home_ok": true,
+  "pdfs": [],
+  "pages": []
+ },
+ "264": {
+  "err": "ERR:<urlopen error timed out>",
+  "pdfs": []
+ },
+ "336": {
+  "err": "ERR:<urlopen error [Errno -5] No address associated with hostnam",
+  "pdfs": []
+ },
+ "207": {
+  "home_ok": true,
+  "pdfs": [],
+  "pages": [
+   "http://mosttss.edu.hk/content.php?wid=20"
+  ]
+ },
+ "161": {
+  "home_ok": true,
+  "pdfs": [],
+  "pages": []
+ },
+ "99": {
+  "home_ok": true,
+  "pdfs": [],
+  "pages": []
+ },
+ "96": {
+  "err": "ERR:HTTP Error 403: Forbidden",
+  "pdfs": []
+ },
+ "240": {
+  "err": "ERR:<urlopen error [Errno -5] No address associated with hostnam",
+  "pdfs": []
+ },
+ "40": {
+  "home_ok": true,
+  "pdfs": [
+   "http://www.ccass.edu.hk/wp-content/uploads/2022/08/學校三年發展計劃-2021-2024.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2023/11/2022-2023-周年校務報告.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2023/11/22-23-運用推廣閱讀津貼報告書.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2023/11/22-23「內地姊妹學校計劃」報告.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2023/11/22-23全方位學習津貼報告.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2023/11/22-23多元學習津貼報告.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2023/11/22-23學校發展津貼撥款報告.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2023/11/22-23校本課後學習支援津貼報告.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2023/11/23-24-多元學習津貼周年計劃.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2023/11/23-24-學校發展津貼撥款計劃書.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2023/11/23-24-運用推廣閱讀津貼計劃書.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2023/11/23-24「內地姊妹學校計劃」計劃書.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2023/11/23-24學校周年計劃.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2023/11/23-24年全方位學習津貼計劃.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2023/11/23-24校本課後學習支援津貼計劃.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2023/11/學校周年計劃.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2024/03/23-24_CivicFundPlanReport_n.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2024/12/10_24-25學校發展津貼計劃.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2024/12/11_23-24學校發展津貼撥款報告.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2024/12/12_24-25學校周年計劃.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2024/12/13_23-24學校周年報告.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2024/12/14_24-25全方位學習津貼計劃.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2024/12/15_23-24年全方位學習津貼報告.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2024/12/16_24-25學生安全及健康措施一覽表.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2024/12/17_24-25一筆過家長教育津貼計劃書.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2024/12/18_24-25-家長學生好精神一筆過津貼計劃.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2024/12/19_24-25校園.好精神一筆過津貼計劃.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2024/12/1_24-25「公民科津貼」運用計劃及報告.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2024/12/20_24-25-支援學校推動校園體育氛圍及「MVPA60」一筆過津貼計劃書.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2024/12/21_24-25推廣中華文化體驗活動一筆過津貼計劃書.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2024/12/2_24-25內地姊妹學校計劃計劃書.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2024/12/3_23-24內地姊妹學校計劃報告.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2024/12/4_24-25潮州會館中學多元學習津貼計劃書.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2024/12/5_23-24潮州會館中學多元學習津貼報告.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2024/12/6_24-25-運用推廣閱讀津貼計劃書.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2024/12/7_23-24-運用推廣閱讀津貼報告書.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2024/12/8_24-25校課後學習支援計劃.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2024/12/9_23-24校本課後學習活動支援計劃報告.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2025/03/11_One-off-Grant-for-Promotion-of-Self-directed-Language-Learning-English-Language-Proposal.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2025/03/12_普通話科一筆過津貼計劃表.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2025/03/2023-24年度「國際青年交流資助計劃」坡港「雙城記」—-新加坡尋「潮」人蹤跡之旅收支報告-1.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2025/05/20250507_2024至2027三年學校發展計劃.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2025/10/22-23「內地姊妹學校計劃」報告.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2025/10/22-23全方位學習津貼報告.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2025/10/22-23多元學習津貼報告.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2025/10/22-23學校周年報告.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2025/10/22-23學校發展津貼撥款報告.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2025/10/22-23校本課後學習支援津貼報告.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2025/10/22-23運用推廣閱讀津貼報告書.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2025/10/23-24學生安全及健康措施一覽表.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2025/11/2024-2025-學校周年報告.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2025/11/2024-2025學生活動支援津貼報告.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2025/11/2024-2025年全方位學習津貼報告.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2025/11/2024-2025校本課後學習活動支援計劃報告.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2025/11/2025-2026-學校周年計劃.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2025/11/2025-2026-學生安全及健康措施一覽表.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2025/11/2025-2026校本課後學習支援計劃.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2026/03/25-26學校發展津貼計劃.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2026/03/2526年全方位學習及姊妹學校津貼計劃.pdf",
+   "https://ccass.edu.hk/wp-content/uploads/2026/07/2024-25年度「國際青年交流資助計劃」草原之路與草原之外：蒙古國文化風情探索之旅收支報告.pdf"
+  ],
+  "pages": [
+   "https://ccass.edu.hk/%e8%a8%88%e5%8a%83%e8%88%87%e5%a0%b1%e5%91%8a/"
+  ]
+ }
+}
