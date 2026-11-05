@@ -3,6 +3,10 @@ from theme_rules import school_tags, ORDER as THEME_ORDER
 
 rows = json.load(open('data/schools.json'))
 fin = json.load(open('data/final_concerns.json'))
+try:
+    rep = json.load(open('data/reports/parsed2.json'))
+except Exception:
+    rep = {}
 
 ORDER = ['中西區','灣仔區','香港東區','香港南區','離島區','油尖旺區','深水埗區','九龍城區',
          '黃大仙區','觀塘區','荃灣區','屯門區','元朗區','北區','沙田區','大埔區','西貢區','葵青區']
@@ -54,17 +58,22 @@ for r in rows:
         'n': r['zh'], 'e': r['en'], 'd': r['district'], 't': r['type'],
         'g': r['gender'], 'rel': r['religion'], 'w': r['webpage'], 's': r['source'],
         'i': f['items'], 'th': f.get('theme',''), 'note': fnote, 'id': r['id'],
-        'tg': school_tags(f['items'])
+        'tg': school_tags(f['items']),
+        'rp': [{'y': y['y'], 'u': y['u'], 'en': bool(y.get('en')),
+                'b': [{'t': b['title'], 'c': b['content'], 'o': b['outcome']} for b in y['b'][:3]]}
+               for y in rep.get(r['id'], [])]
     })
 data.sort(key=lambda x: (dorder.get(x['d'], 99), x['n']))
 
 # CSV
 with open('全港中學一覽_2025-26.csv','w',newline='',encoding='utf-8-sig') as fh:
     w = csv.writer(fh)
-    w.writerow(['學校名稱','英文名稱','區域','學校類別','學生性別','宗教','主題（自動歸類）','關注事項（2025/26）','學校網頁','資料來源（中學概覽）'])
+    w.writerow(['學校名稱','英文名稱','區域','學校類別','學生性別','宗教','主題（自動歸類）','關注事項（2025/26）','近三年學校報告摘要','學校網頁','資料來源（中學概覽）'])
     for x in data:
         w.writerow([x['n'], x['e'], x['d'], x['t'], x['g'], x['rel'], '、'.join(x['tg']),
-                    ' / '.join(x['i']) if x['i'] else (x['note'] or '概覽未列明'), x['w'], x['s']])
+                    ' / '.join(x['i']) if x['i'] else (x['note'] or '概覽未列明'),
+                    ' | '.join(f"{y['y']}：{'；'.join((b['t']+'｜'+' '.join(b['o'] or b['c'])) for b in y['b'][:3])}" for y in x['rp']),
+                    x['w'], x['s']])
 
 payload = json.dumps(data, ensure_ascii=False, separators=(',',':'))
 
@@ -152,6 +161,21 @@ tbody tr:last-child td{border-bottom:none}
 .chip.more{background:#f4f6fb;color:var(--ink2);border-color:var(--line)}
 @media (prefers-color-scheme:dark){.chip{background:#1e2a4a;color:#b9c8ee;border-color:#2c3a5e}
   .chip:hover{background:#25335a}.chip.more{background:#1a1f2b;color:#9aa3b2;border-color:#2a3140}}
+.rpBtn{margin-top:7px;display:inline-block;border:1px solid #cdd8fb;color:#2f4ea8;background:#f5f8ff;
+  border-radius:6px;padding:2px 9px;font-size:11.5px;font-family:inherit;cursor:pointer;line-height:1.6}
+.rpBtn:hover{background:#eaf0ff}
+.rpBtn.on{background:#e7eeff!important}
+tr.rpRow>td{background:#fbfcff;padding:0 14px 14px!important}
+.rpPanel{border-top:1px dashed var(--line);padding:12px 2px 4px;font-size:13px}
+.rpY{margin-bottom:12px}
+.rpY:last-child{margin-bottom:0}
+.rpYh{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.rpTag{background:#eef2fe;color:#2f4ea8;border-radius:6px;padding:1px 8px;font-size:12px;font-weight:600}
+.rpSrc{font-size:11.5px;color:var(--ink3)}
+.rpB{margin:0 0 7px;padding-left:10px;border-left:2px solid #e4e9f7}
+.rpT{font-weight:600;color:var(--ink);font-size:13px;margin-bottom:2px}
+.rpO,.rpC{color:var(--ink2);font-size:12.5px;line-height:1.6;margin:1px 0}
+.rpLab{color:var(--ink3);font-size:11.5px;margin-right:4px}
 .conc{min-width:300px}
 .conc ol{margin:0;padding-left:18px}
 .conc li{margin:0 0 4px;color:var(--ink);font-size:13.5px;line-height:1.6}
@@ -218,6 +242,7 @@ footer .note{color:var(--ink3)}
       <span class="stat">按位津貼 <b>__CAPUT__</b></span>
       <span class="stat">18 區全收錄</span>
       <span class="stat">概覽未列明 <b>__MISSING__</b> 所</span>
+      <span class="stat">報告摘要 <b>__REP__</b> 校</span>
       <span class="stat">2026/27 概覽尚未出版</span>
     </div>
   </div>
@@ -265,6 +290,7 @@ footer .note{color:var(--ink3)}
       <li><b>區域</b>：按教育局 18 區分區（學校實際所在區域）。</li>
       <li><b>學校類別</b>：官立／資助／直資／按位津貼，另附學生性別及宗教背景。</li>
       <li><b>主題</b>：按 16 類主題以關鍵詞多標籤自動歸類（每校平均 2.6 個），點主題標籤可即時篩選；分類為整理結果，非官方分類。</li>
+      <li><b>報告摘要</b>：由各校官網可讀取的《學校周年報告》PDF 抽取（近三年），列出關注事項及其「成效／成就」段落；只作摘錄，未逐校人工改寫，數字與結論以原文為準。約 3 成學校在網上公開可讀報告，其餘未收錄。</li>
       <li><b>關注項目</b>：摘自概覽「學校特色 → 學校關注事項」一欄，由學校自行提供及核實，已按原文整理為條目；部分學校只列年度主題或未填報，該等情況會標示「概覽未列明」。</li>
     </ul>
     <h3>範圍與限制</h3>
@@ -305,6 +331,18 @@ function themeChips(tg){
   return show + rest;
 }
 
+function rpPanel(rp){
+  return '<div class="rpPanel">' + rp.map(function(y){
+    const blocks = (y.b||[]).map(function(b){
+      const o = (b.o||[]).map(x=>`<p class="rpO">${esc(x)}</p>`).join('');
+      const c = (!b.o||!b.o.length) ? (b.c||[]).map(x=>`<p class="rpC"><span class="rpLab">內容</span>${esc(x)}</p>`).join('') : '';
+      return `<div class="rpB"><div class="rpT">${esc(b.t)}</div>${o}${c}</div>`;
+    }).join('');
+    return `<div class="rpY"><div class="rpYh"><span class="rpTag">${esc(y.y)}</span>${y.en ? '<span class="rpTag" style="background:#f3f4f6;color:#5a616e">英文原文</span>' : ''}
+      <a class="rpSrc" href="${y.u}" target="_blank" rel="noopener">報告原文 PDF</a></div>${blocks}</div>`;
+  }).join('') + '</div>';
+}
+
 function rowHTML(d, idx){
   const items = d.i || [];
   const shown = items.slice(0, SHOW);
@@ -334,8 +372,8 @@ function rowHTML(d, idx){
     <td class="c-dist"><span class="dlabel">${esc(d.d)}</span></td>
     <td class="c-type"><span class="badge b-${esc(d.t)}">${esc(d.t)}</span>${meta ? `<span class="meta">${esc(meta)}</span>` : ''}</td>
     <td class="c-theme">${themeChips(d.tg)}</td>
-    <td class="conc">${list}${theme}</td>
-  </tr>`;
+    <td class="conc">${list}${theme}${(d.rp&&d.rp.length) ? `<button class="rpBtn" data-rp="${idx}">近三年報告摘要（${d.rp.length} 年）▾</button>` : ''}</td>
+  </tr>` + ((d.rp&&d.rp.length) ? `<tr class="rpRow" id="rp${idx}" style="display:none"><td colspan="5">${rpPanel(d.rp)}</td></tr>` : '');
 }
 
 function render(){
@@ -372,6 +410,16 @@ document.querySelectorAll('thead th[data-k]').forEach(th => {
   });
 });
 body.addEventListener('click', e => {
+  const rb = e.target.closest('.rpBtn');
+  if (rb){
+    const box = document.getElementById('rp'+rb.dataset.rp);
+    if (box){
+      const open = box.style.display !== 'none';
+      box.style.display = open ? 'none' : 'table-row';
+      rb.classList.toggle('on', !open);
+    }
+    return;
+  }
   const chip = e.target.closest('.chip');
   if (chip && chip.dataset.th){
     fth.value = chip.dataset.th;
@@ -401,6 +449,7 @@ out = (HTML.replace('__DATA__', payload)
         .replace('__DSS__', str(m.get('直資',0)))
         .replace('__GOV__', str(m.get('官立',0)))
         .replace('__CAPUT__', str(m.get('按位津貼',0)))
-        .replace('__MISSING__', str(sum(1 for d in data if not d['i']))))
+        .replace('__MISSING__', str(sum(1 for d in data if not d['i'])))
+        .replace('__REP__', str(sum(1 for d in data if d['rp']))))
 open('index.html','w',encoding='utf-8').write(out)
 print('written', len(out), 'bytes; schools', len(data))
