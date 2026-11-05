@@ -3,6 +3,7 @@ import json, re, os
 DOTS=re.compile(r'(\.{3,}|…{2,}|·{3,}|_{3,})')
 TOCISH=re.compile(r'(\.{3,}|…{2,}).*\d+\s*$')
 ANCHOR=re.compile(r'關注事項\s*[（(]?\s*([一二三四五1-5])\s*[)）]?\s*[：:、.]?\s*(.*)')
+ANCHOR2=re.compile(r'^(?:[IVX]{1,4}|\d{1,2})\s*[\.、]\s*關注事項\s*[：:]\s*(.+)')
 ENG=re.compile(r'Major\s+Concern[s]?\s*(\d)?\s*[:\-]?\s*(.*)',re.I)
 OUT_MARK=re.compile(r'^(成效|成果|成就|預期成果|評估結果|表現|成效評估|檢討)')
 REF_MARK=re.compile(r'^(反思|回饋|跟進|建議|改善)')
@@ -73,12 +74,17 @@ def parse(text):
     ls=join_frag(lines_of(text))
     idx=[(i,m) for i,l in enumerate(ls) for m in [ANCHOR.search(l)] if m]
     if not idx:
+        idx=[(i,m) for i,l in enumerate(ls) for m in [ANCHOR2.search(l)] if m]
+    if not idx:
         # english fallback
         idx=[(i,m) for i,l in enumerate(ls) for m in [ENG.search(l)] if m]
     if not idx: return []
     raw=[]
     for k,(i,m) in enumerate(idx[:30]):
-        num=m.group(1); rest=(m.group(2) or '').strip(' ：:、.')
+        if m.re is ANCHOR2:
+            num=''; rest=(m.group(1) or '').strip(' ：:、.')
+        else:
+            num=m.group(1); rest=(m.group(2) or '').strip(' ：:、.')
         title=rest
         if len(title)<6 and i+1<len(ls) and len(ls[i+1])<40 and not STOP.match(ls[i+1]):
             title=ls[i+1]
