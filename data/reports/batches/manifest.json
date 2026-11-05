@@ -1,0 +1,32 @@
+[
+ {
+  "batch": 1,
+  "file": "data/reports/batches/in_01.json",
+  "schools": 21
+ },
+ {
+  "batch": 2,
+  "file": "data/reports/batches/in_02.json",
+  "schools": 21
+ },
+ {
+  "batch": 3,
+  "file": "data/reports/batches/in_03.json",
+  "schools": 21
+ },
+ {
+  "batch": 4,
+  "file": "data/reports/batches/in_04.json",
+  "schools": 21
+ },
+ {
+  "batch": 5,
+  "file": "data/reports/batches/in_05.json",
+  "schools": 21
+ },
+ {
+  "batch": 6,
+  "file": "data/reports/batches/in_06.json",
+  "schools": 19
+ }
+]
